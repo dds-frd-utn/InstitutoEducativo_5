@@ -20,9 +20,9 @@ import com.grupo5.institutoEducativo.entity.Socio;
 public interface SocioService {
  	public List<Socio> findAllSocio();
 
-	public Optional<Socio> findProfesorById(Long id);
+	public Optional<Socio> findSocioById(Long id);
 
-	public Socio saveProfesor(Socio newSocio);
+	public Socio saveSocio(Socio newSocio);
 
 	public String deleteSocio(Long id);
 

@@ -6,8 +6,8 @@
 package com.grupo5.institutoEducativo.service;
 
 import java.util.List;
-
 import java.util.Optional;
+
 import org.springframework.stereotype.Service;
 
 import com.grupo5.institutoEducativo.entity.Categoria;
@@ -18,13 +18,14 @@ import com.grupo5.institutoEducativo.entity.Categoria;
  */
 @Service
 public interface CategoriaService {
- 	public List<Categoria> findAllCategoria();
 
-	public Optional<Categoria> findCategoriaById(Long id);
+    public List<Categoria> findAllCategoria();
 
-	public Categoria saveCategoria(Categoria newCategoria);
+    public Optional<Categoria> findCategoriaById(Long id);
 
-	public String deleteCategoria(Long id);
+    public Categoria saveCategoria(Categoria newCategoria);
 
-	public String updateCategoria(Categoria categoria);
+    public String deleteCategoria(Long id);
+
+    public String updateCategoria(Categoria categoria);
 }

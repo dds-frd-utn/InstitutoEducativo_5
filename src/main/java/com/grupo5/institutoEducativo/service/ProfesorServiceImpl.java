@@ -3,43 +3,55 @@ package com.grupo5.institutoEducativo.service;
 import java.util.List;
 import java.util.Optional;
 
+import org.springframework.beans.factory.annotation.Autowired;
+
 import com.grupo5.institutoEducativo.entity.Profesor;
+import com.grupo5.institutoEducativo.repository.ProfesorRepository;
 
 public class ProfesorServiceImpl implements ProfesorService {
 
+	@Autowired(required = false)
+	private ProfesorRepository profesorRepository;
+
 	@Override
 	public List<Profesor> findAllProfesor() {
-		// TODO Auto-generated method stub
-		return null;
+		return profesorRepository.findAll();
 	}
 
 	@Override
 	public Optional<Profesor> findProfesorById(Long id) {
-		// TODO Auto-generated method stub
-		return Optional.empty();
+		return profesorRepository.findById(id);
 	}
 
 	@Override
 	public Profesor saveProfesor(Profesor newProfesor) {
-		// TODO Auto-generated method stub
-		return null;
+		return profesorRepository.save(newProfesor);
 	}
 
 	@Override
 	public String deleteProfesor(Long id) {
-		// TODO Auto-generated method stub
-		return null;
+		if (profesorRepository.findById(id) != null) {
+			profesorRepository.deleteById(id);
+			return "OK";
+		}
+		return "error: id no existe";
 	}
 
 	@Override
 	public String updateProfesor(Profesor profesor) {
-		// TODO Auto-generated method stub
-		return null;
+		int id = profesor.getId();
+		long longId = id;
+		if (profesorRepository.findById(longId) != null) {
+			profesorRepository.save(profesor);
+			return "OK";
+		}
+
+		return "error: id no existe";
 	}
 
-	public static void main(String[] args) {
-		// TODO Auto-generated method stub
-
-	}
-
+	/*
+	 * public static void main(String[] args) { // TODO Auto-generated method stub
+	 * 
+	 * }
+	 */
 }

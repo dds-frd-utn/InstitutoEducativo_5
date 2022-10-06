@@ -21,8 +21,9 @@ import java.util.Optional;
 public interface CategoriaRepository extends CrudRepository<Entity, Id> {
     void save(Optional<Categoria> CategoriaToUpdate);
 }
-*/
-
+ */
+@Repository
 public interface CategoriaRepository extends JpaRepository<Categoria, Long> {
+
     void save(Optional<Categoria> CategoriaToUpdate);
 }

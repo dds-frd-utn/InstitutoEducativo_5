@@ -34,7 +34,7 @@ public class DocenteController {
     }
 
     @RequestMapping(value = "/docentes/{id}", method = RequestMethod.GET, produces = "application/json")
-    public Optional<Docente> getAlumno(@PathVariable Long id) {
+    public Optional<Docente> getDocentes(@PathVariable Long id) {
         return docenteService.findDocenteById(id);
     }
 

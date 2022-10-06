@@ -18,11 +18,10 @@ import java.util.Optional;
  * @author imano-oh
  */
 /*
-public interface ProfesorRepository extends CrudRepository<Entity, Id> {
-    void save(Optional<Profesor> ProfesorToUpdate);
-}
-*/
-
+ * public interface DocenteRepository extends CrudRepository<Entity, Id> { void
+ * save(Optional<Docente> DocenteToUpdate); }
+ */
+@Repository
 public interface ProfesorRepository extends JpaRepository<Profesor, Long> {
-    void save(Optional<Profesor> ProfesorToUpdate);
+	void save(Optional<Profesor> ProfesorToUpdate);
 }
