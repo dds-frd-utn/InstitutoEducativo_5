@@ -23,7 +23,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
  * @author imano-oh
  */
 @RestController
-@RequestMapping("/url")
+//@RequestMapping("/url")
 public class ProfesorController {
 
 	@Autowired // (required = false)
