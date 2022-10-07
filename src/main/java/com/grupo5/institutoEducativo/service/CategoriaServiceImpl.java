@@ -4,9 +4,12 @@ import java.util.List;
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
 import com.grupo5.institutoEducativo.entity.Categoria;
 import com.grupo5.institutoEducativo.repository.CategoriaRepository;
 
+@Service
 public class CategoriaServiceImpl implements CategoriaService {
 
     @Autowired(required = false)
@@ -39,9 +42,7 @@ public class CategoriaServiceImpl implements CategoriaService {
 
     @Override
     public String updateCategoria(Categoria categoria) {
-        int id = categoria.getId();
-        long longId = id;
-        if (categoriaRepository.findById(longId) != null)
+        if (categoriaRepository.findById(categoria.getId()) != null)
         {
             categoriaRepository.save(categoria);
             return "OK";

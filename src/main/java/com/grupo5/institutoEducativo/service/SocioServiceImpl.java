@@ -4,13 +4,15 @@ import java.util.List;
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import com.grupo5.institutoEducativo.entity.Socio;
 import com.grupo5.institutoEducativo.repository.SocioRepository;
 
+@Service
 public class SocioServiceImpl implements SocioService {
 
-	@Autowired(required = false)
+	@Autowired //(required = false)
 	private SocioRepository socioRepository;
 
 	@Override
@@ -39,9 +41,7 @@ public class SocioServiceImpl implements SocioService {
 
 	@Override
 	public String updateSocio(Socio socio) {
-		int id = socio.getId();
-		long longId = id;
-		if (socioRepository.findById(longId) != null) {
+		if (socioRepository.findById(socio.getId()) != null) {
 			socioRepository.save(socio);
 			return "OK";
 		}

@@ -40,7 +40,7 @@ public class Socio implements Serializable {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Basic(optional = false)
     @Column(name = "id")
-    private Integer id;
+    private Long id;
     @Basic(optional = false)
     @Column(name = "antiguedad")
     private int antiguedad;
@@ -54,21 +54,21 @@ public class Socio implements Serializable {
     public Socio() {
     }
 
-    public Socio(Integer id) {
+    public Socio(Long id) {
         this.id = id;
     }
 
-    public Socio(Integer id, int antiguedad, float valorAcordado) {
+    public Socio(Long id, int antiguedad, float valorAcordado) {
         this.id = id;
         this.antiguedad = antiguedad;
         this.valorAcordado = valorAcordado;
     }
 
-    public Integer getId() {
+    public Long getId() {
         return id;
     }
 
-    public void setId(Integer id) {
+    public void setId(Long id) {
         this.id = id;
     }
 

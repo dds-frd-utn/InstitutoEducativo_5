@@ -26,32 +26,32 @@ import org.springframework.web.bind.annotation.RequestMethod;
 //@RequestMapping("/url")
 public class SocioController {
 
-    @Autowired(required = false)
-    SocioService socioService;
+	@Autowired // (required = true)
+	SocioService socioService;
 
-    @RequestMapping(value = "/socios", method = RequestMethod.GET, produces = "application/json")
-    public List<Socio> getSocio() {
-        return socioService.findAllSocio();
-    }
+	@RequestMapping(value = "/socios", method = RequestMethod.GET, produces = "application/json")
+	public List<Socio> getSocio() {
+		return socioService.findAllSocio();
+	}
 
-    @RequestMapping(value = "/socios/{id}", method = RequestMethod.GET, produces = "application/json")
-    public Optional<Socio> getSocio(@PathVariable Long id) {
-        return socioService.findSocioById(id);
-    }
+	@RequestMapping(value = "/socios/{id}", method = RequestMethod.GET, produces = "application/json")
+	public Optional<Socio> getSocio(@PathVariable Long id) {
+		return socioService.findSocioById(id);
+	}
 
-    @RequestMapping(value = "/socios/add", method = RequestMethod.POST, produces = "application/json")
-    public Socio addPostPost(Socio socio) {
-        return socioService.saveSocio(socio);
-    }
+	@RequestMapping(value = "/socios/add", method = RequestMethod.POST, produces = "application/json")
+	public Socio addPostPost(Socio socio) {
+		return socioService.saveSocio(socio);
+	}
 
-    @RequestMapping(value = "/socios/delete/{id}", method = RequestMethod.DELETE, produces = "application/json")
-    public String deletePost(@PathVariable Long id) {
-        return socioService.deleteSocio(id);
-    }
+	@RequestMapping(value = "/socios/delete/{id}", method = RequestMethod.DELETE, produces = "application/json")
+	public String deletePost(@PathVariable Long id) {
+		return socioService.deleteSocio(id);
+	}
 
-    @RequestMapping(value = "/socios/update", method = RequestMethod.PUT, produces = "application/json")
-    public String updateSocio(Socio socio) {
-        return socioService.updateSocio(socio);
-    }
+	@RequestMapping(value = "/socios/update", method = RequestMethod.PUT, produces = "application/json")
+	public String updateSocio(Socio socio) {
+		return socioService.updateSocio(socio);
+	}
 
 }

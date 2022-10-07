@@ -4,9 +4,12 @@ import java.util.List;
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
 import com.grupo5.institutoEducativo.entity.Docente;
 import com.grupo5.institutoEducativo.repository.DocenteRepository;
 
+@Service
 public class DocenteServiceImpl implements DocenteService {
 
 	@Autowired(required = false)
@@ -38,9 +41,7 @@ public class DocenteServiceImpl implements DocenteService {
 
 	@Override
 	public String updateDocente(Docente docente) {
-		int id = docente.getId();
-		long longId = id;
-		if (docenteRepository.findById(longId) != null) {
+		if (docenteRepository.findById(docente.getId()) != null) {
 			docenteRepository.save(docente);
 			return "OK";
 		}

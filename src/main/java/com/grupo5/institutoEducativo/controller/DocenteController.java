@@ -25,7 +25,7 @@ import com.grupo5.institutoEducativo.entity.Docente;
 /*@RequestMapping("/url")*/
 public class DocenteController {
 
-    @Autowired(required = false)
+    @Autowired //(required = false)
     DocenteService docenteService;
 
     @RequestMapping(value = "/docentes", method = RequestMethod.GET, produces = "application/json")

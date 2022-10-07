@@ -8,15 +8,13 @@ package com.grupo5.institutoEducativo.service;
 import java.util.List;
 import java.util.Optional;
 
-import org.springframework.stereotype.Service;
-
 import com.grupo5.institutoEducativo.entity.Docente;
 
 /**
  *
  * @author imano-oh
  */
-@Service
+
 public interface DocenteService {
 	public List<Docente> findAllDocente();
 

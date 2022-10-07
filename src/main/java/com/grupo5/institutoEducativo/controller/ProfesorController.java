@@ -26,32 +26,32 @@ import org.springframework.web.bind.annotation.RequestMethod;
 @RequestMapping("/url")
 public class ProfesorController {
 
-    @Autowired(required = false)
-    ProfesorService profesorService;
+	@Autowired // (required = false)
+	ProfesorService profesorService;
 
-    @RequestMapping(value = "/profesores", method = RequestMethod.GET, produces = "application/json")
-    public List<Profesor> getProfesor() {
-        return profesorService.findAllProfesor();
-    }
+	@RequestMapping(value = "/profesores", method = RequestMethod.GET, produces = "application/json")
+	public List<Profesor> getProfesor() {
+		return profesorService.findAllProfesor();
+	}
 
-    @RequestMapping(value = "/profesores/{id}", method = RequestMethod.GET, produces = "application/json")
-    public Optional<Profesor> getProfesor(@PathVariable Long id) {
-        return profesorService.findProfesorById(id);
-    }
+	@RequestMapping(value = "/profesores/{id}", method = RequestMethod.GET, produces = "application/json")
+	public Optional<Profesor> getProfesor(@PathVariable Long id) {
+		return profesorService.findProfesorById(id);
+	}
 
-    @RequestMapping(value = "/profesores/add", method = RequestMethod.POST, produces = "application/json")
-    public Profesor addPostPost(Profesor profesor) {
-        return profesorService.saveProfesor(profesor);
-    }
+	@RequestMapping(value = "/profesores/add", method = RequestMethod.POST, produces = "application/json")
+	public Profesor addPostPost(Profesor profesor) {
+		return profesorService.saveProfesor(profesor);
+	}
 
-    @RequestMapping(value = "/profesores/delete/{id}", method = RequestMethod.DELETE, produces = "application/json")
-    public String deletePost(@PathVariable Long id) {
-        return profesorService.deleteProfesor(id);
-    }
+	@RequestMapping(value = "/profesores/delete/{id}", method = RequestMethod.DELETE, produces = "application/json")
+	public String deletePost(@PathVariable Long id) {
+		return profesorService.deleteProfesor(id);
+	}
 
-    @RequestMapping(value = "/profesores/update", method = RequestMethod.PUT, produces = "application/json")
-    public String updateProfesor(Profesor profesor) {
-        return profesorService.updateProfesor(profesor);
-    }
+	@RequestMapping(value = "/profesores/update", method = RequestMethod.PUT, produces = "application/json")
+	public String updateProfesor(Profesor profesor) {
+		return profesorService.updateProfesor(profesor);
+	}
 
 }

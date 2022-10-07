@@ -8,7 +8,6 @@ package com.grupo5.institutoEducativo.service;
 import java.util.List;
 
 import java.util.Optional;
-import org.springframework.stereotype.Service;
 
 import com.grupo5.institutoEducativo.entity.Socio;
 
@@ -16,9 +15,8 @@ import com.grupo5.institutoEducativo.entity.Socio;
  *
  * @author imano-oh
  */
-@Service
 public interface SocioService {
- 	public List<Socio> findAllSocio();
+	public List<Socio> findAllSocio();
 
 	public Optional<Socio> findSocioById(Long id);
 

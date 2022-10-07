@@ -8,7 +8,6 @@ package com.grupo5.institutoEducativo.service;
 import java.util.List;
 
 import java.util.Optional;
-import org.springframework.stereotype.Service;
 
 import com.grupo5.institutoEducativo.entity.Profesor;
 
@@ -16,7 +15,6 @@ import com.grupo5.institutoEducativo.entity.Profesor;
  *
  * @author imano-oh
  */
-@Service
 public interface ProfesorService {
 	public List<Profesor> findAllProfesor();
 

@@ -4,10 +4,12 @@ import java.util.List;
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import com.grupo5.institutoEducativo.entity.Profesor;
 import com.grupo5.institutoEducativo.repository.ProfesorRepository;
 
+@Service
 public class ProfesorServiceImpl implements ProfesorService {
 
 	@Autowired(required = false)
@@ -39,9 +41,7 @@ public class ProfesorServiceImpl implements ProfesorService {
 
 	@Override
 	public String updateProfesor(Profesor profesor) {
-		int id = profesor.getId();
-		long longId = id;
-		if (profesorRepository.findById(longId) != null) {
+		if (profesorRepository.findById(profesor.getId()) != null) {
 			profesorRepository.save(profesor);
 			return "OK";
 		}

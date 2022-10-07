@@ -39,7 +39,7 @@ public class Profesor implements Serializable {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Basic(optional = false)
     @Column(name = "id")
-    private Integer id;
+    private Long id;
     @Column(name = "profesion")
     private String profesion;
     @JoinColumn(name = "id_docente", referencedColumnName = "id")
@@ -52,15 +52,15 @@ public class Profesor implements Serializable {
     public Profesor() {
     }
 
-    public Profesor(Integer id) {
+    public Profesor(Long id) {
         this.id = id;
     }
 
-    public Integer getId() {
+    public Long getId() {
         return id;
     }
 
-    public void setId(Integer id) {
+    public void setId(Long id) {
         this.id = id;
     }
 
