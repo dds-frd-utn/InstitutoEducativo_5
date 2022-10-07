@@ -1,5 +1,5 @@
 /*
- * To change this license header, choose License Headers in Project Properties.
+ñ * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
@@ -29,7 +29,7 @@ public class CategoriaController {
     CategoriaService categoriaService;
 
     @RequestMapping(value = "/categorias", method = RequestMethod.GET, produces = "application/json")
-    public List<Categoria> getCategorias() {
+    public List<Categoria> getCateogoria() {
         return categoriaService.findAllCategoria();
     }
 
