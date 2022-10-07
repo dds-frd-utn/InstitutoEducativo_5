@@ -7,6 +7,7 @@
 		<version>2.7.3</version>
 		<relativePath /> <!-- lookup parent from repository -->
 	</parent>
+	<!-- grupo5 institutoEducativo -->
 	<groupId>com.grupo5</groupId>
 	<artifactId>institutoEducativo</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
